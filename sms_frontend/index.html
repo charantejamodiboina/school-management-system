@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Management System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>School Management System</h1>
+        <nav>
+            <ul>
+                <li><a href="#class-section">Class</a></li>
+                <li><a href="#students-section">Students</a></li>
+                <li><a href="#teachers-section">Teachers</a></li>
+                <li><a href="#subjects-section">Subjects</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Class Section -->
+        <section id="class-section">
+            <h2>Class</h2>
+            <form id="class-form">
+                <input type="text" id="class-name" placeholder="Class Name" required>
+                <input type="Number" id="class-total_students" placeholder="Total Students" required>
+                <button type="submit">Add Class</button>
+            </form>
+            <ul id="class-list"></ul>
+        </section>
+        <!-- Students Section -->
+        <section id="students-section">
+            <h2>Students</h2>
+            <form id="student-form">
+                <input type="text" id="student-first_name" placeholder="Student First Name" required>
+                <input type="text" id="student-last_name" placeholder="Student Last Name" required>
+                <input type="email" id="student-email" placeholder="Email" required>
+                <input type="tel" id="student-phone_number" placeholder="Phone Number">
+                <input type="text" id="student-address" placeholder="Address">
+                <input type="date" id="student-date_of_birth" placeholder="DOB">
+                <input type="date" id="student-enrollment_date" placeholder="Enrollment Date">
+                <select id="student-classroom" required>
+                    <option value="" disabled selected>Select Classroom</option>
+                    <!-- Options will be populated dynamically -->
+                </select>
+                <button type="submit">Add Student</button>
+            </form>
+            <ul id="students-list"></ul>
+        </section>
+
+        <!-- Teachers Section -->
+        <section id="teachers-section">
+            <h2>Teachers</h2>
+            <form id="teacher-form">
+                <input type="text" id="teacher-first_name" placeholder="First Name" required>
+                <input type="text" id="teacher-last_name" placeholder="Last Name" required>
+                <input type="email" id="teacher-email" placeholder="Email" required>
+                <input type="tel" id="teacher-phone_number" placeholder="Phone Number">
+                <input type="date" id="teacher-hire_date" placeholder="Hire Date" required>
+                <button type="submit">Add Teacher</button>
+            </form>
+            <ul id="teachers-list"></ul>
+        </section>
+
+        <!-- Subject Section -->
+        <section id="subjects-section">
+            <h2>Subjects</h2>
+            <form id="subject-form">
+                <input type="text" id="subject-subject_name" placeholder="Subject Name" required>
+                <select id="subject-Teacher" required>
+                    <option value="" disabled selected>Select Teacher</option>
+                    <!-- Options will be populated dynamically -->
+                </select>
+                <select id="subject-classroom" required>
+                    <option value="" disabled selected>Select Classroom</option>
+                    <!-- Options will be populated dynamically -->
+                </select>
+                <button type="submit">Add Subject</button>
+            </form>
+            <ul id="subject-list"></ul>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
