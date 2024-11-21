@@ -1,24 +1,27 @@
 from rest_framework import serializers
-from .models import *
-class ClassroomSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Classroom
-        fields = '__all__'
-    
+from .models import User, Teacher, Student, Attendance, Notice
 
-class StudentSerializer(serializers.ModelSerializer):
+class UserSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Student
-        fields = '__all__'
+        model = User
+        fields = ['id', 'username', 'email', 'role', 'is_approved']
 
 class TeacherSerializer(serializers.ModelSerializer):
     class Meta:
         model = Teacher
-        fields = '__all__'
+        fields = ['id', 'qualifications', 'experience']
 
-
-class SubjectSerializer(serializers.ModelSerializer):
+class StudentSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Subject
-        fields = '__all__'
+        model = Student
+        fields = ['id', 'grade', 'attendance_records']
 
+class AttendanceSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Attendance
+        fields = ['id', 'date', 'status', 'student']
+
+class NoticeSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Notice
+        fields = ['id', 'title', 'description', 'published_by', 'created_at']

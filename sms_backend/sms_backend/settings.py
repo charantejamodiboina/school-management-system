@@ -39,8 +39,19 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'school_app',
     'rest_framework',
-    'corsheaders'
+    'corsheaders',
 ]
+
+AUTH_USER_MODEL = 'school_app.User'  # Use custom user model
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.SessionAuthentication',  # For session-based login
+    ],
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated',
+    ],
+    }
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

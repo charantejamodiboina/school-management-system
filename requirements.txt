@@ -1,2 +1,3 @@
 django_rest_framework
 django-cors-headers
+django
